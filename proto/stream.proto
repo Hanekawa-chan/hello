@@ -1,0 +1,17 @@
+syntax = "proto3";
+package stream;
+
+option go_package = "/proto";
+
+service StreamService {
+  rpc Echo(Empty) returns (stream Result);
+}
+
+message Empty {
+}
+
+message Result
+{
+  bool status =1;
+  string msg=2;
+}
